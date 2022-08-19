@@ -16,7 +16,7 @@ function getFolderTree(folderId, listAll) {
     // Initialise the sheet
     var file, data, sheet = SpreadsheetApp.getActiveSheet();
     sheet.clear();
-    sheet.appendRow(["Full Path", "Name","Type" ,"Date", "URL", "Last Updated", "Description", "Size","Owner Email"]);
+    sheet.appendRow(["Full Path", "Name","Type" ,"Date", "URL", "Last Updated", "Description", "Size"]);
     
     // Get files and folders
     getChildFolders(parentFolder.getName(), parentFolder, data, sheet, listAll);
@@ -41,8 +41,7 @@ function getChildFolders(parentName, parent, data, sheet, listAll) {
       childFolder.getUrl(),
       childFolder.getLastUpdated(),
       childFolder.getDescription(),
-      childFolder.getSize()/1024,
-      childFolder.getOwner(),
+      childFolder.getSize()/1024
     ];
     // Write
     sheet.appendRow(data);
@@ -60,7 +59,6 @@ function getChildFolders(parentName, parent, data, sheet, listAll) {
         childFile.getLastUpdated(),
         childFile.getDescription(),
         childFile.getSize()/1024,
-        childFile.getOwner(),
       ];
       // Write
       sheet.appendRow(data);

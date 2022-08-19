@@ -1,4 +1,4 @@
-# GDrive-ListDriveContents
+# GoogleDrive-ListDriveContents
 Apps Script to list Google Drive folder structure and files into a Sheet.
 Iterates through the root folder and subfolders, listing the folders and files. Included info:
 * Full Path

@@ -1,3 +1,4 @@
+// Create a Google Sheet, click Extensions > Apps Script, enter the code in this script, and fill in the Folder ID variable
 // Folder ID can be found at the end of the folder URL, i.e. https://drive.google.com/drive/folders/FOLDER_ID_HERE
 var folderId = 'ENTER FOLDER ID HERE';
 
@@ -41,7 +42,9 @@ function getChildFolders(parentName, parent, data, sheet, listAll) {
       childFolder.getUrl(),
       childFolder.getLastUpdated(),
       childFolder.getDescription(),
-      childFolder.getSize()/1024
+      childFolder.getSize()/1024,
+      childFolder.getOwner().getEmail()
+        //Owner info will only retrieve if you are the owner of the folder/drive being scanned
     ];
     // Write
     sheet.appendRow(data);
@@ -59,6 +62,8 @@ function getChildFolders(parentName, parent, data, sheet, listAll) {
         childFile.getLastUpdated(),
         childFile.getDescription(),
         childFile.getSize()/1024,
+        childFolder.getOwner().getEmail()
+        //Owner info will only retrieve if you are the owner of the folder/drive being scanned
       ];
       // Write
       sheet.appendRow(data);

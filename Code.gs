@@ -5,7 +5,7 @@ var folderId = 'ENTER FOLDER ID HERE';
   function main() {
   var SS = SpreadsheetApp.getActiveSpreadsheet();
 //Uncomment and modify next line if you want to output to a particular tab on your sheet
-//var sh0 == SS.getSheetByName("YOUR SHEET NAME HERE");
+//var sh0 = SS.getSheetByName("YOUR SHEET NAME HERE");
   var ui = SpreadsheetApp.getUi(); //Comment this line if you use the above modification
   getFolderTree(folderId, true);
 };
